@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Twinkle Toe Day Care — Premium baby daycare in Faerie Glen, Pretoria East. Safe, loving care for babies aged 4 weeks to 2 years. 1:4 ratio, all meals included. Call Trudy: 082 700 0703">
+  <meta name="keywords" content="baby daycare Pretoria, infant care Faerie Glen, daycare Pretoria East, baby care South Africa, baby daycare Faerie Glen">
+  <meta property="og:title" content="Twinkle Toe Day Care | Where Babies Feel Safe, Loved & Happy">
+  <meta property="og:description" content="Premium baby daycare in Pretoria East. 1:4 caregiver ratio, all meals included, ages 4 weeks to 2 years. Book a visit with Trudy today.">
+  <meta property="og:type" content="website">
+  <title>Twinkle Toe Day Care | Premium Baby Daycare in Pretoria East</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍼</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-emoji">🍼</span>
+        <div class="logo-text-wrap">
+          <span class="logo-name">Twinkle Toe</span>
+          <span class="logo-tag">Day Care</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#safety">Safety</a>
+        <a href="#daily">Daily Life</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#testimonials">Families</a>
+        <a href="#pricing">Fees</a>
+      </div>
+      <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27d%20love%20to%20book%20a%20visit%20to%20Twinkle%20Toe%20Day%20Care." class="btn-nav" target="_blank" rel="noopener noreferrer">
+        📅 Book a Visit
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#safety" class="nav-mobile-link">Safety & Trust</a>
+      <a href="#daily" class="nav-mobile-link">Daily Schedule</a>
+      <a href="#facilities" class="nav-mobile-link">Our Facilities</a>
+      <a href="#testimonials" class="nav-mobile-link">Parent Stories</a>
+      <a href="#pricing" class="nav-mobile-link">Fees & Pricing</a>
+      <a href="https://wa.me/27827000703" class="btn-nav-mobile" target="_blank" rel="noopener noreferrer">💬 WhatsApp Trudy</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay"></div>
+
+    <!-- CSS 3D floating decorations layered behind content -->
+    <div class="hero-float-deco hfd-star-1"   aria-hidden="true">⭐</div>
+    <div class="hero-float-deco hfd-star-2"   aria-hidden="true">✨</div>
+    <div class="hero-float-deco hfd-heart-1"  aria-hidden="true">💕</div>
+    <div class="hero-float-deco hfd-moon"     aria-hidden="true">🌙</div>
+    <div class="hero-float-deco hfd-bubble-1" aria-hidden="true"></div>
+    <div class="hero-float-deco hfd-bubble-2" aria-hidden="true"></div>
+    <div class="hero-float-deco hfd-bubble-3" aria-hidden="true"></div>
+    <div class="hero-float-deco hfd-teddy"   aria-hidden="true">🧸</div>
+    <div class="hero-float-deco hfd-music"   aria-hidden="true">🎵</div>
+    <div class="hero-float-deco hfd-rainbow" aria-hidden="true">🌈</div>
+
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up">
+        <span class="badge-star">⭐</span>
+        Pretoria's Most Loved Baby Daycare
+      </div>
+      <h1 class="animate-fade-up delay-1">
+        Where Your Baby Feels<br>
+        <span class="gradient-text">Safe, Loved &amp; Happy</span><br>
+        Every Single Day.
+      </h1>
+      <p class="hero-sub animate-fade-up delay-2">
+        Premium baby daycare for ages 4 weeks to 2 years<br>
+        <span class="hero-location">📍 Faerie Glen, Pretoria East &nbsp;·&nbsp; Small Groups &nbsp;·&nbsp; All Meals Included</span>
+      </p>
+      <div class="hero-cta animate-fade-up delay-3">
+        <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27d%20love%20to%20book%20a%20visit%20to%20Twinkle%20Toe%20Day%20Care!" class="btn-primary" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.115 1.524 5.844L0 24l6.334-1.503A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.508-5.166-1.395l-.371-.219-3.861.915.981-3.773-.241-.388A9.961 9.961 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Book a Visit
+        </a>
+        <a href="mailto:trudy@twinkletoe.co.za?subject=Enrollment%20Enquiry%20-%20Twinkle%20Toe" class="btn-secondary">
+          Enroll Your Baby <span class="btn-arrow">→</span>
+        </a>
+      </div>
+      <div class="hero-trust-pills animate-fade-up delay-4">
+        <div class="trust-pill">🛡️ 1:4 Caregiver Ratio</div>
+        <div class="trust-pill">🍽️ All Meals Included</div>
+        <div class="trust-pill">👶 Max 12 Babies</div>
+        <div class="trust-pill">⏰ 6:30am – 6:30pm</div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Discover more</span>
+      <div class="scroll-arrow-anim">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number"><span class="counter" data-target="12">0</span></div>
+        <div class="stat-label">Maximum Babies</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-number">1:4</div>
+        <div class="stat-label">Caregiver Ratio</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="counter" data-target="10">0</span><span>+</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Meals Included</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SAFETY SECTION ===== -->
+  <section id="safety" class="section bg-light-blue">
+    <div class="s-orbs" aria-hidden="true">
+      <div class="s-orb s-orb-1" data-speed="0.1"></div>
+      <div class="s-orb s-orb-2" data-speed="0.18"></div>
+      <div class="s-orb s-orb-3" data-speed="0.08"></div>
+    </div>
+    <div class="container">
+      <div class="section-eyebrow">Your Peace of Mind</div>
+      <h2 class="section-title">Your Baby's Safety Is<br>Our <span class="gradient-text">First Priority</span></h2>
+      <p class="section-desc">
+        We know that leaving your baby with someone else is one of the hardest things a parent can do.
+        That's why every decision we make — from our caregiver ratios to our cleaning routines —
+        is designed to give you complete peace of mind.
+      </p>
+      <div class="safety-grid">
+        <div class="safety-card glass-card">
+          <div class="card-icon-wrap" style="--icon-grad-a:#A8D8EA;--icon-grad-b:#7BC8E2">
+            <span aria-hidden="true">🛡️</span>
+          </div>
+          <h3>Always Supervised</h3>
+          <p>Your baby is never left unattended. Our caregivers maintain constant, loving supervision — whether awake, eating, playing, or sleeping.</p>
+        </div>
+        <div class="safety-card glass-card">
+          <div class="card-icon-wrap" style="--icon-grad-a:#FFD6E0;--icon-grad-b:#F7A8B8">
+            <span aria-hidden="true">🧴</span>
+          </div>
+          <h3>Spotlessly Clean</h3>
+          <p>Daily sanitization of every surface, toy, and piece of equipment. We maintain rigorous hygiene standards so your baby stays healthy and safe.</p>
+        </div>
+        <div class="safety-card glass-card">
+          <div class="card-icon-wrap" style="--icon-grad-a:#C8F0E0;--icon-grad-b:#98E8C8">
+            <span aria-hidden="true">👶</span>
+          </div>
+          <h3>Personal Attention</h3>
+          <p>With a maximum of 4 babies per caregiver, your child receives individual attention, responsive care, and genuine emotional connection — every single day.</p>
+        </div>
+        <div class="safety-card glass-card">
+          <div class="card-icon-wrap" style="--icon-grad-a:#E8D5F5;--icon-grad-b:#C8A8F0">
+            <span aria-hidden="true">🔐</span>
+          </div>
+          <h3>Secure Premises</h3>
+          <p>A fully secured, gated facility. Only authorized parents and caregivers have access, and you control exactly who is permitted to pick up your baby.</p>
+        </div>
+        <div class="safety-card glass-card">
+          <div class="card-icon-wrap" style="--icon-grad-a:#FFE5D0;--icon-grad-b:#F0C0A0">
+            <span aria-hidden="true">📱</span>
+          </div>
+          <h3>Daily Photo Updates</h3>
+          <p>We send you photos and messages throughout the day so you always know your baby is happy, fed, and thriving. No news is good news — but we prefer to share.</p>
+        </div>
+        <div class="safety-card glass-card">
+          <div class="card-icon-wrap" style="--icon-grad-a:#FFF0C0;--icon-grad-b:#F0D060">
+            <span aria-hidden="true">🏥</span>
+          </div>
+          <h3>First Aid Certified</h3>
+          <p>All our caregivers hold current paediatric first aid certification. We're fully prepared so you never have to worry about emergency readiness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DAILY TIMELINE ===== -->
+  <section id="daily" class="section bg-cream">
+    <div class="s-orbs" aria-hidden="true">
+      <div class="s-orb s-orb-1" data-speed="0.12"></div>
+      <div class="s-orb s-orb-2" data-speed="0.16"></div>
+      <div class="s-orb s-orb-3" data-speed="0.09"></div>
+    </div>
+    <div class="container">
+      <div class="section-eyebrow">A Day in the Life</div>
+      <h2 class="section-title">Every Moment Is <span class="gradient-text">Meaningful</span></h2>
+      <p class="section-desc">
+        We follow a gentle, structured routine that honours your baby's natural rhythms.
+        Every part of the day is intentional — designed to nurture development, joy, and a deep sense of security.
+      </p>
+      <div class="timeline">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <div class="timeline-item tl-left">
+          <div class="tl-time">6:30 AM</div>
+          <div class="tl-dot"><span>🌅</span></div>
+          <div class="tl-card glass-card">
+            <h3>Welcome &amp; Morning Cuddles</h3>
+            <p>Each baby arrives to a warm, familiar face. We take time for individual greetings, making sure every little one settles in feeling safe and loved from the very first moment of the day.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item tl-right">
+          <div class="tl-time">8:00 AM</div>
+          <div class="tl-dot"><span>🍳</span></div>
+          <div class="tl-card glass-card">
+            <h3>Nutritious Breakfast</h3>
+            <p>A warm, age-appropriate breakfast to start the day right. We follow each baby's individual feeding schedule and dietary needs with careful consistency and care.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item tl-left">
+          <div class="tl-time">9:00 AM</div>
+          <div class="tl-dot"><span>🧩</span></div>
+          <div class="tl-card glass-card">
+            <h3>Sensory Play &amp; Tummy Time</h3>
+            <p>Supervised tummy time, sensory discovery baskets, textured toys, mirrors, and sounds. This is where tiny brains and bodies grow the most — through joyful exploration.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item tl-right">
+          <div class="tl-time">10:00 AM</div>
+          <div class="tl-dot"><span>🌿</span></div>
+          <div class="tl-card glass-card">
+            <h3>Snack &amp; Outdoor Exploration</h3>
+            <p>A mid-morning snack followed by fresh air and sunshine. Outdoor play supports physical development, mood regulation, and the simple joy of feeling the world around them.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item tl-left">
+          <div class="tl-time">12:00 PM</div>
+          <div class="tl-dot"><span>🍲</span></div>
+          <div class="tl-card glass-card">
+            <h3>Freshly Cooked Lunch</h3>
+            <p>A nutritious, home-cooked meal prepared with love. We introduce new flavours and textures in a gentle, supported way — building lifelong healthy eating habits one spoonful at a time.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item tl-right">
+          <div class="tl-time">12:30 PM</div>
+          <div class="tl-dot"><span>😴</span></div>
+          <div class="tl-card glass-card">
+            <h3>Peaceful Nap Time</h3>
+            <p>Individual cots, soft lighting, and gentle white noise. We respect each baby's sleep schedule so they wake up refreshed, content, and ready to explore the afternoon.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item tl-left">
+          <div class="tl-time">2:30 PM</div>
+          <div class="tl-dot"><span>🎨</span></div>
+          <div class="tl-card glass-card">
+            <h3>Creative Arts &amp; Music</h3>
+            <p>Finger painting, music, movement, and imaginative play. These activities build creativity, coordination, and language skills in the most natural and joyful way possible.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item tl-right">
+          <div class="tl-time">4:30 PM</div>
+          <div class="tl-dot"><span>🧸</span></div>
+          <div class="tl-card glass-card">
+            <h3>Story Time &amp; Quiet Play</h3>
+            <p>Calming down with stories, songs, and gentle play as we prepare for happy pickups. Your baby will be content, pleasantly tired, and absolutely ready to come home to you.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEVELOPMENT SECTION ===== -->
+  <section id="development" class="section bg-light-pink">
+    <div class="s-orbs" aria-hidden="true">
+      <div class="s-orb s-orb-1" data-speed="0.14"></div>
+      <div class="s-orb s-orb-2" data-speed="0.10"></div>
+      <div class="s-orb s-orb-3" data-speed="0.20"></div>
+    </div>
+    <div class="container">
+      <div class="section-eyebrow">Child Development</div>
+      <h2 class="section-title">We Don't Just Care for Babies —<br>We <span class="gradient-text">Help Them Grow</span></h2>
+      <p class="section-desc">
+        Every activity at Twinkle Toe is intentionally designed around the four pillars of early childhood development.
+        Your baby isn't just being looked after — they're being nurtured into their fullest potential.
+      </p>
+      <div class="dev-grid">
+        <div class="dev-card" style="--dev-color:#7BC8E2;--dev-bg:#E8F4FD">
+          <div class="dev-icon-wrap">❤️</div>
+          <h3>Emotional Security</h3>
+          <p>Consistent, responsive caregiving builds secure attachment. Babies who feel emotionally safe are more confident, curious, and resilient throughout life.</p>
+          <ul class="dev-list">
+            <li>Consistent caregiver relationships</li>
+            <li>Responsive to cues and emotions</li>
+            <li>Gentle transitions and routines</li>
+          </ul>
+        </div>
+        <div class="dev-card" style="--dev-color:#5DC8A0;--dev-bg:#E8F8F2">
+          <div class="dev-icon-wrap">🧠</div>
+          <h3>Cognitive Growth</h3>
+          <p>We stimulate curiosity, language development, and problem-solving through play-based learning that feels like pure fun — because it is.</p>
+          <ul class="dev-list">
+            <li>Sensory discovery activities</li>
+            <li>Language-rich environment</li>
+            <li>Age-appropriate challenges</li>
+          </ul>
+        </div>
+        <div class="dev-card" style="--dev-color:#F090A8;--dev-bg:#FFF0F5">
+          <div class="dev-icon-wrap">🏃</div>
+          <h3>Physical Milestones</h3>
+          <p>Supervised tummy time, movement play, and outdoor exploration support the physical milestones every parent wants to celebrate and cheer.</p>
+          <ul class="dev-list">
+            <li>Daily tummy time &amp; movement</li>
+            <li>Fine and gross motor activities</li>
+            <li>Safe outdoor exploration</li>
+          </ul>
+        </div>
+        <div class="dev-card" style="--dev-color:#A080D8;--dev-bg:#F5F0FF">
+          <div class="dev-icon-wrap">🤝</div>
+          <h3>Social Skills</h3>
+          <p>Even the youngest babies begin learning social awareness. Being around other babies in a safe, small-group setting builds the foundation for lifelong social confidence.</p>
+          <ul class="dev-list">
+            <li>Small group interactions</li>
+            <li>Turn-taking awareness</li>
+            <li>Peer bonding and play</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FACILITIES SECTION ===== -->
+  <section id="facilities" class="section bg-light-green">
+    <div class="s-orbs" aria-hidden="true">
+      <div class="s-orb s-orb-1" data-speed="0.11"></div>
+      <div class="s-orb s-orb-2" data-speed="0.19"></div>
+      <div class="s-orb s-orb-3" data-speed="0.08"></div>
+    </div>
+    <div class="container">
+      <div class="section-eyebrow">Our Space</div>
+      <h2 class="section-title">A Home Designed to<br><span class="gradient-text">Inspire &amp; Comfort</span></h2>
+      <p class="section-desc">
+        238 Cliffendale Drive is more than a daycare — it's a second home.
+        Every corner is thoughtfully designed with your baby's comfort, safety, and development in mind.
+      </p>
+      <div class="facilities-grid">
+        <div class="facility-card glass-card">
+          <div class="facility-hero" style="--fac-a:#A8D8EA;--fac-b:#7BC8E2">
+            <div class="facility-big-icon">🛏️</div>
+          </div>
+          <div class="facility-body">
+            <h3>Cozy Sleep Rooms</h3>
+            <p>Individual cots with soft bedding, blackout curtains, and white noise create the perfect nap environment. Each baby has their own dedicated sleep space.</p>
+            <div class="facility-tags">
+              <span>Individual cots</span>
+              <span>White noise</span>
+              <span>Safe sleep standards</span>
+            </div>
+          </div>
+        </div>
+        <div class="facility-card glass-card">
+          <div class="facility-hero" style="--fac-a:#C8F0E0;--fac-b:#98E8C8">
+            <div class="facility-big-icon">🧩</div>
+          </div>
+          <div class="facility-body">
+            <h3>Sensory Play Zone</h3>
+            <p>Soft mats, discovery baskets, textured toys, mirrors, and stimulating materials chosen specifically for the critical early developmental stages.</p>
+            <div class="facility-tags">
+              <span>Age-appropriate toys</span>
+              <span>Sensory materials</span>
+              <span>Soft safe flooring</span>
+            </div>
+          </div>
+        </div>
+        <div class="facility-card glass-card">
+          <div class="facility-hero" style="--fac-a:#FFD6E0;--fac-b:#F7A8B8">
+            <div class="facility-big-icon">🌳</div>
+          </div>
+          <div class="facility-body">
+            <h3>Outdoor Garden</h3>
+            <p>A safe, fully enclosed outdoor space for fresh air, sunshine, and gentle exploration. Perfect for little adventurers discovering the world around them.</p>
+            <div class="facility-tags">
+              <span>Fully enclosed</span>
+              <span>Sun protection</span>
+              <span>Soft ground surfaces</span>
+            </div>
+          </div>
+        </div>
+        <div class="facility-card glass-card">
+          <div class="facility-hero" style="--fac-a:#E8D5F5;--fac-b:#C8A8F0">
+            <div class="facility-big-icon">🎨</div>
+          </div>
+          <div class="facility-body">
+            <h3>Creative Corner</h3>
+            <p>Baby-safe art materials, musical instruments, and imaginative play tools. Creativity and self-expression are nurtured and encouraged every single day.</p>
+            <div class="facility-tags">
+              <span>Baby-safe materials</span>
+              <span>Music &amp; movement</span>
+              <span>Art exploration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="address-banner glass-card">
+        <div class="address-icon-wrap">📍</div>
+        <div class="address-text">
+          <h3>Come See It for Yourself</h3>
+          <p>238 Cliffendale Drive, Faerie Glen, Pretoria East</p>
+        </div>
+        <a href="https://www.google.com/maps/search/238+Cliffendale+Drive+Faerie+Glen+Pretoria" class="btn-outline" target="_blank" rel="noopener noreferrer">
+          Get Directions →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="section bg-cream">
+    <div class="s-orbs" aria-hidden="true">
+      <div class="s-orb s-orb-1" data-speed="0.13"></div>
+      <div class="s-orb s-orb-2" data-speed="0.17"></div>
+      <div class="s-orb s-orb-3" data-speed="0.10"></div>
+    </div>
+    <div class="container">
+      <div class="section-eyebrow">Real Families. Real Stories.</div>
+      <h2 class="section-title">Parents Who <span class="gradient-text">Trust Us</span><br>Every Single Day</h2>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card glass-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>"I cried dropping Liam off on his first day. By 9am I'd called Trudy, convinced I'd made a mistake. She sent me a photo of him smiling during tummy time. I cried again — this time with pure relief. We'll never go anywhere else."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#A8D8EA,#7BC8E2)">S</div>
+            <div class="testi-info">
+              <div class="testi-name">Sarah M.</div>
+              <div class="testi-detail">Mom of Liam, 7 months &nbsp;·&nbsp; Pretoria East</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>"The 1-to-4 ratio is real — I've visited places that say it but don't deliver. Here you can see it. Trudy knows Zara's mood before Zara does. Our daughter is hitting milestones early and I'm convinced it's because of the quality of care at Twinkle Toe."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#FFD6E0,#F7A8B8)">M</div>
+            <div class="testi-info">
+              <div class="testi-name">Michael &amp; Priya R.</div>
+              <div class="testi-detail">Parents of Zara, 11 months &nbsp;·&nbsp; Faerie Glen</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>"I visited six daycares before choosing Twinkle Toe. The moment I walked in, it smelled clean, I heard happy babies, and Trudy answered every single one of my questions without rushing me once. I enrolled that same week."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#C8F0E0,#98E8C8)">C</div>
+            <div class="testi-info">
+              <div class="testi-name">Chantelle B.</div>
+              <div class="testi-detail">Mom of Ethan, 9 months &nbsp;·&nbsp; Menlyn</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>"18 months in and Amara still runs in every morning without looking back. That tells me everything I need to know about how safe and loved she feels there. The peace of mind I have is worth absolutely everything to me."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#E8D5F5,#C8A8F0)">A</div>
+            <div class="testi-info">
+              <div class="testi-name">Ayesha K.</div>
+              <div class="testi-detail">Mom of Amara, 18 months &nbsp;·&nbsp; Woodhill</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="section bg-light-lavender">
+    <div class="s-orbs" aria-hidden="true">
+      <div class="s-orb s-orb-1" data-speed="0.15"></div>
+      <div class="s-orb s-orb-2" data-speed="0.11"></div>
+      <div class="s-orb s-orb-3" data-speed="0.22"></div>
+    </div>
+    <div class="container">
+      <div class="section-eyebrow">Transparent Pricing</div>
+      <h2 class="section-title">Simple, All-Inclusive.<br><span class="gradient-text">No Hidden Costs.</span></h2>
+      <p class="section-desc">
+        What you see is what you pay. Everything your baby needs throughout the day is included —
+        from morning breakfast to afternoon snack, and everything in between.
+      </p>
+      <div class="pricing-grid">
+        <div class="pricing-card glass-card">
+          <div class="pricing-pill">One-Time Fee</div>
+          <h3 class="pricing-name">Registration</h3>
+          <div class="pricing-amount">
+            <span class="price-currency">R</span>
+            <span class="price-value">750</span>
+          </div>
+          <p class="price-sub">Paid once upon enrollment</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Secure your baby's place</li>
+            <li><span class="check">✓</span> Welcome &amp; orientation visit</li>
+            <li><span class="check">✓</span> Meet your caregivers</li>
+            <li><span class="check">✓</span> Personalised intake form</li>
+          </ul>
+          <a href="mailto:trudy@twinkletoe.co.za?subject=Enrollment%20Enquiry" class="btn-outline-full">Send an Enquiry</a>
+        </div>
+        <div class="pricing-card glass-card featured-pricing">
+          <div class="pricing-pill featured-pill">⭐ All-Inclusive Care</div>
+          <h3 class="pricing-name">Monthly Full Care</h3>
+          <div class="pricing-amount">
+            <span class="price-currency">R</span>
+            <span class="price-value">3,300</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="price-sub">Everything included. Zero surprises.</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Care from 6:30am – 6:30pm</li>
+            <li><span class="check">✓</span> Breakfast &amp; all daily meals</li>
+            <li><span class="check">✓</span> Sensory &amp; developmental play</li>
+            <li><span class="check">✓</span> Outdoor activities daily</li>
+            <li><span class="check">✓</span> Daily photo &amp; message updates</li>
+            <li><span class="check">✓</span> Paediatric first aid on-site</li>
+            <li><span class="check">✓</span> Nap time with individual cot</li>
+          </ul>
+          <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27m%20interested%20in%20enrolling%20my%20baby%20at%20Twinkle%20Toe.%20Can%20we%20chat%20about%20availability?" class="btn-primary" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.115 1.524 5.844L0 24l6.334-1.503A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.508-5.166-1.395l-.371-.219-3.861.915.981-3.773-.241-.388A9.961 9.961 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Enroll on WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="pricing-note glass-card">
+        <span class="pricing-note-icon">💬</span>
+        <p>Have questions about fees, availability, or start dates? <a href="https://wa.me/27827000703" target="_blank" rel="noopener noreferrer">Chat with Trudy directly on WhatsApp</a> — she responds personally and quickly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section id="cta" class="cta-section">
+    <div class="cta-shapes" aria-hidden="true">
+      <div class="cta-shape cs-1"></div>
+      <div class="cta-shape cs-2"></div>
+      <div class="cta-shape cs-3"></div>
+      <div class="cta-shape cs-4"></div>
+    </div>
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-urgency-badge">⚠️ Limited — Only 12 Babies Accepted at a Time</div>
+        <h2>Ready to Give Your Baby<br>the <span class="gradient-text-white">Best Start in Life?</span></h2>
+        <p>Spaces at Twinkle Toe are kept small by design — so every baby gets the love and attention they deserve. Don't wait until there's a waitlist. Book your visit today.</p>
+        <div class="cta-btn-group">
+          <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27d%20love%20to%20book%20a%20tour%20of%20Twinkle%20Toe%20Day%20Care." class="btn-cta-wa" target="_blank" rel="noopener noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.115 1.524 5.844L0 24l6.334-1.503A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.508-5.166-1.395l-.371-.219-3.861.915.981-3.773-.241-.388A9.961 9.961 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Book a Tour on WhatsApp
+          </a>
+          <a href="tel:0827000703" class="btn-cta-call">
+            📞 Call Trudy: 082 700 0703
+          </a>
+        </div>
+        <div class="trust-badges-row">
+          <div class="trust-badge-item">🏆 Pretoria's Most Loved</div>
+          <div class="trust-badge-item">🛡️ Safe &amp; Secure</div>
+          <div class="trust-badge-item">💚 All Meals Included</div>
+          <div class="trust-badge-item">⭐ 5-Star Families</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <span class="footer-logo-emoji">🍼</span>
+            <div>
+              <div class="footer-logo-name">Twinkle Toe Day Care</div>
+              <div class="footer-logo-tag">Where babies feel safe, loved &amp; happy.</div>
+            </div>
+          </div>
+          <p class="footer-brand-desc">Premium baby daycare in Faerie Glen, Pretoria East. Caring for babies aged 4 weeks to 2 years with warmth, expertise, and genuine love.</p>
+          <div class="footer-contacts">
+            <a href="tel:0827000703" class="footer-contact-link">📞 082 700 0703</a>
+            <a href="mailto:trudy@twinkletoe.co.za" class="footer-contact-link">✉️ trudy@twinkletoe.co.za</a>
+            <p class="footer-contact-link">📍 238 Cliffendale Drive,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faerie Glen, Pretoria East</p>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <a href="#safety">Safety &amp; Trust</a>
+          <a href="#daily">Daily Schedule</a>
+          <a href="#development">Child Development</a>
+          <a href="#facilities">Our Facilities</a>
+          <a href="#testimonials">Parent Stories</a>
+          <a href="#pricing">Fees &amp; Pricing</a>
+        </div>
+        <div class="footer-hours-col">
+          <h4>Operating Hours</h4>
+          <div class="hours-table">
+            <span class="hours-day">Monday</span>
+            <span class="hours-time">6:30am – 6:00pm</span>
+            <span class="hours-day">Tue – Fri</span>
+            <span class="hours-time">6:30am – 6:30pm</span>
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">Closed</span>
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time">Closed</span>
+          </div>
+        </div>
+        <div class="footer-cta-col">
+          <h4>Start Today</h4>
+          <p>Limited spaces available. Secure your baby's spot before the waitlist opens.</p>
+          <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27d%20love%20to%20book%20a%20tour%20of%20Twinkle%20Toe." class="btn-footer-wa" target="_blank" rel="noopener noreferrer">
+            💬 WhatsApp Trudy
+          </a>
+          <a href="tel:0827000703" class="btn-footer-call">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Twinkle Toe Day Care &nbsp;·&nbsp; Faerie Glen, Pretoria &nbsp;·&nbsp; All Rights Reserved</p>
+        <p class="footer-love">Made with ❤️ for the little ones</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+  <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27d%20love%20to%20know%20more%20about%20Twinkle%20Toe%20Day%20Care." class="wa-float" id="waFloat" target="_blank" rel="noopener noreferrer" aria-label="Chat with Trudy on WhatsApp">
+    <div class="wa-float-inner">
+      <svg class="wa-icon" width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.115 1.524 5.844L0 24l6.334-1.503A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.508-5.166-1.395l-.371-.219-3.861.915.981-3.773-.241-.388A9.961 9.961 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      <span class="wa-label-text">Book a Tour</span>
+    </div>
+    <div class="wa-pulse" aria-hidden="true"></div>
+  </a>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
