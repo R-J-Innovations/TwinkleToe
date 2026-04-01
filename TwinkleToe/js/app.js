@@ -15,6 +15,9 @@
     initSectionOrbParallax();
     initScrollAnimations();
     initCounters();
+    initGalleryLightbox();
+    loadSavedReviews();
+    initReviewForm();
   });
 
   /* ============================================================
@@ -431,46 +434,50 @@
   /* ============================================================
      5. CARD 3D TILT — physics-based mouse tracking
   ============================================================ */
+  function applyTilt(card) {
+    var rafId, hovering = false;
+    var tx = 0, ty = 0, cx = 0, cy = 0;
+
+    card.style.willChange = 'transform';
+
+    card.addEventListener('mouseenter', function () {
+      hovering = true;
+      cancelAnimationFrame(rafId);
+      tick();
+    });
+
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      tx =  ((e.clientX - r.left  - r.width  / 2) / (r.width  / 2)) * 9;
+      ty = -((e.clientY - r.top   - r.height / 2) / (r.height / 2)) * 9;
+    });
+
+    card.addEventListener('mouseleave', function () {
+      hovering = false;
+      tx = 0; ty = 0;
+    });
+
+    function tick() {
+      cx += (tx - cx) * 0.11;
+      cy += (ty - cy) * 0.11;
+      var tz = hovering ? 16 : 0;
+      card.style.transform = 'perspective(950px) rotateX(' + cy.toFixed(3) + 'deg) rotateY(' + cx.toFixed(3) + 'deg) translateZ(' + tz + 'px)';
+      if (hovering || Math.abs(cx) > 0.04 || Math.abs(cy) > 0.04) {
+        rafId = requestAnimationFrame(tick);
+      } else {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+      }
+    }
+  }
+
   function initCardTilt() {
     // Skip on touch-only devices
     if (window.matchMedia('(hover: none)').matches) return;
 
-    const selector = '.glass-card, .dev-card, .facility-card, .pricing-card, .tl-card';
+    var selector = '.glass-card, .dev-card, .facility-card, .pricing-card, .tl-card';
     document.querySelectorAll(selector).forEach(function (card) {
-      let rafId, hovering = false;
-      let tx = 0, ty = 0, cx = 0, cy = 0;
-
-      card.style.willChange = 'transform';
-
-      card.addEventListener('mouseenter', function () {
-        hovering = true;
-        cancelAnimationFrame(rafId);
-        tick();
-      });
-
-      card.addEventListener('mousemove', function (e) {
-        const r = card.getBoundingClientRect();
-        tx =  ((e.clientX - r.left  - r.width  / 2) / (r.width  / 2)) * 9;
-        ty = -((e.clientY - r.top   - r.height / 2) / (r.height / 2)) * 9;
-      });
-
-      card.addEventListener('mouseleave', function () {
-        hovering = false;
-        tx = 0; ty = 0;
-      });
-
-      function tick() {
-        cx += (tx - cx) * 0.11;
-        cy += (ty - cy) * 0.11;
-        const tz = hovering ? 16 : 0;
-        card.style.transform = `perspective(950px) rotateX(${cy.toFixed(3)}deg) rotateY(${cx.toFixed(3)}deg) translateZ(${tz}px)`;
-        if (hovering || Math.abs(cx) > 0.04 || Math.abs(cy) > 0.04) {
-          rafId = requestAnimationFrame(tick);
-        } else {
-          card.style.transform = '';
-          card.style.boxShadow = '';
-        }
-      }
+      applyTilt(card);
     });
   }
 
@@ -503,7 +510,7 @@
   ============================================================ */
   function initScrollAnimations() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-      document.querySelectorAll('.glass-card, .dev-card, .facility-card, .testimonial-card, .pricing-card, .tl-card').forEach(function (el) {
+      document.querySelectorAll('.glass-card, .dev-card, .facility-card, .testimonial-card, .pricing-card, .tl-card, .gallery-item').forEach(function (el) {
         el.style.opacity = '1';
       });
       return;
@@ -550,6 +557,11 @@
     // Facility cards
     if (document.querySelector('.facilities-grid')) {
       gsap.fromTo('.facility-card', { opacity: 0, y: 55, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.75, stagger: 0.12, ease: 'back.out(1.4)', scrollTrigger: { trigger: '.facilities-grid', start: 'top 85%' } });
+    }
+
+    // Gallery featured items
+    if (document.querySelector('.gallery-featured-grid')) {
+      gsap.fromTo('.gallery-featured-grid .gallery-item', { opacity: 0, y: 45, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.75, stagger: 0.1, ease: 'back.out(1.4)', scrollTrigger: { trigger: '.gallery-featured-grid', start: 'top 85%' } });
     }
 
     // Testimonials
@@ -634,6 +646,334 @@
     }, { threshold: 0.5 });
 
     counters.forEach(function (c) { io.observe(c); });
+  }
+
+  /* ============================================================
+     9. REVIEW STORAGE — JSONbin.io (shared) + localStorage fallback
+     ──────────────────────────────────────────────────────────────
+     SETUP (2 minutes, free):
+       1. Go to https://jsonbin.io and sign up
+       2. Click "+ Create Bin", paste in:  {"reviews":[]}  and save
+       3. Copy the Bin ID from the URL bar  (looks like: 6634abc12...)
+       4. Go to API Keys tab → copy your Master Key  ($2a$10$...)
+       5. Paste both values into the two lines below
+     ──────────────────────────────────────────────────────────────
+     Until configured, reviews fall back to localStorage (per-browser).
+  ============================================================ */
+
+  var JSONBIN_BIN_ID  = '69cd16a3aaba882197b4e725';   // ← paste your Bin ID here
+  var JSONBIN_API_KEY = '$2a$10$1XuZLXMp6rT7fqd6OxFwKus.GZilS8F/t9veh2p6Db2dUflVqw1se';   // ← paste your Master Key here
+  var JSONBIN_BASE    = 'https://api.jsonbin.io/v3/b/';
+  var LS_KEY          = 'tt_reviews_v1';   // localStorage fallback key
+
+  var AVATAR_GRADS = [
+    'linear-gradient(135deg,#A8D8EA,#7BC8E2)',
+    'linear-gradient(135deg,#FFD6E0,#F7A8B8)',
+    'linear-gradient(135deg,#C8F0E0,#98E8C8)',
+    'linear-gradient(135deg,#E8D5F5,#C8A8F0)',
+    'linear-gradient(135deg,#FFE8C0,#F0C870)',
+    'linear-gradient(135deg,#D0F5FF,#7BC8E2)',
+  ];
+  var RATING_HINTS = { '1': 'Not great', '2': 'Could be better', '3': "It's okay", '4': 'Really good', '5': 'Absolutely love it! ✨' };
+
+  /* Returns true when JSONbin credentials have been filled in */
+  function jsonbinReady() {
+    return JSONBIN_BIN_ID.length > 0 && JSONBIN_API_KEY.length > 0;
+  }
+
+  /* Fetch the current reviews array from JSONbin */
+  function fetchReviews() {
+    return fetch(JSONBIN_BASE + JSONBIN_BIN_ID + '/latest', {
+      headers: { 'X-Master-Key': JSONBIN_API_KEY }
+    })
+    .then(function (r) {
+      if (!r.ok) throw new Error('fetch failed: ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      return Array.isArray(data.record && data.record.reviews) ? data.record.reviews : [];
+    });
+  }
+
+  /* Overwrite the bin with a new reviews array */
+  function putReviews(reviews) {
+    return fetch(JSONBIN_BASE + JSONBIN_BIN_ID, {
+      method:  'PUT',
+      headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_API_KEY },
+      body:    JSON.stringify({ reviews: reviews })
+    })
+    .then(function (r) {
+      if (!r.ok) throw new Error('save failed: ' + r.status);
+    });
+  }
+
+  /* Build a review card DOM node identical to the static cards */
+  function buildReviewCard(review) {
+    var card = document.createElement('div');
+    card.className = 'testimonial-card glass-card';
+
+    var badge = document.createElement('span');
+    badge.className = 'testi-new-badge';
+    badge.textContent = '✦ Parent Review';
+    card.appendChild(badge);
+
+    var stars = document.createElement('div');
+    stars.className = 'testi-stars';
+    stars.textContent = '⭐'.repeat(Math.max(1, Math.min(5, review.rating || 5)));
+    card.appendChild(stars);
+
+    var bq = document.createElement('blockquote');
+    bq.textContent = '\u201C' + review.comment + '\u201D';
+    card.appendChild(bq);
+
+    var author = document.createElement('div');
+    author.className = 'testi-author';
+
+    var avatar = document.createElement('div');
+    avatar.className = 'testi-avatar';
+    avatar.style.background = AVATAR_GRADS[(review.gradIndex || 0) % AVATAR_GRADS.length];
+    avatar.textContent = (review.name.trim()[0] || '?').toUpperCase();
+    author.appendChild(avatar);
+
+    var info = document.createElement('div');
+    info.className = 'testi-info';
+
+    var nameEl = document.createElement('div');
+    nameEl.className = 'testi-name';
+    nameEl.textContent = review.name;
+    info.appendChild(nameEl);
+
+    var detail = document.createElement('div');
+    detail.className = 'testi-detail';
+    detail.textContent = review.child || 'Twinkle Toe Parent';
+    info.appendChild(detail);
+
+    author.appendChild(info);
+    card.appendChild(author);
+
+    if (!window.matchMedia('(hover: none)').matches) { applyTilt(card); }
+
+    return card;
+  }
+
+  /* Render an array of review objects into the testimonials grid */
+  function renderReviews(reviews, grid) {
+    reviews.forEach(function (review) {
+      grid.appendChild(buildReviewCard(review));
+    });
+  }
+
+  /* ── Load reviews on page start ── */
+  function loadSavedReviews() {
+    var grid = document.querySelector('.testimonials-grid');
+    if (!grid) return;
+
+    if (!jsonbinReady()) {
+      /* No JSONbin configured — use localStorage (per-browser only) */
+      var local = [];
+      try { local = JSON.parse(localStorage.getItem(LS_KEY) || '[]'); } catch (e) {}
+      renderReviews(local, grid);
+      return;
+    }
+
+    /* Show a subtle loading row while fetching */
+    var loader = document.createElement('p');
+    loader.className = 'reviews-loading';
+    loader.textContent = 'Loading reviews…';
+    grid.insertAdjacentElement('afterend', loader);
+
+    fetchReviews()
+      .then(function (reviews) {
+        loader.remove();
+        renderReviews(reviews, grid);
+      })
+      .catch(function () {
+        loader.remove();
+        /* Network error — silently fall back to localStorage */
+        var local = [];
+        try { local = JSON.parse(localStorage.getItem(LS_KEY) || '[]'); } catch (e) {}
+        renderReviews(local, grid);
+      });
+  }
+
+  /* ── Review form interactions ── */
+  function initReviewForm() {
+    var formWrap   = document.getElementById('reviewFormWrap');
+    var successEl  = document.getElementById('reviewSuccess');
+    var submitBtn  = document.getElementById('reviewSubmit');
+    var anotherBtn = document.getElementById('reviewAnother');
+    var nameInput  = document.getElementById('reviewName');
+    var childInput = document.getElementById('reviewChild');
+    var textInput  = document.getElementById('reviewText');
+    var charCount  = document.getElementById('reviewCharCount');
+    var errorEl    = document.getElementById('reviewError');
+    var hintEl     = document.getElementById('starRatingHint');
+    var grid       = document.querySelector('.testimonials-grid');
+    if (!formWrap || !submitBtn || !grid) return;
+
+    /* Character counter */
+    if (textInput && charCount) {
+      textInput.addEventListener('input', function () {
+        var len = textInput.value.length;
+        charCount.textContent = len + ' / 500';
+        charCount.classList.toggle('near-limit', len >= 450);
+      });
+    }
+
+    /* Star hint */
+    document.querySelectorAll('input[name="review_rating"]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        if (hintEl)  hintEl.textContent  = RATING_HINTS[radio.value] || '';
+        if (errorEl) errorEl.hidden = true;
+      });
+    });
+
+    /* Submit */
+    submitBtn.addEventListener('click', function () {
+      var ratingEl = document.querySelector('input[name="review_rating"]:checked');
+      var rating   = ratingEl ? parseInt(ratingEl.value, 10) : 0;
+      var name     = nameInput  ? nameInput.value.trim()  : '';
+      var child    = childInput ? childInput.value.trim() : '';
+      var comment  = textInput  ? textInput.value.trim()  : '';
+
+      if (!rating)  { showError('Please select a star rating before submitting.'); return; }
+      if (!name)    { showError('Please enter your name.');   nameInput  && nameInput.focus();  return; }
+      if (!comment) { showError('Please write a short review.'); textInput && textInput.focus(); return; }
+
+      /* Disable button while saving */
+      submitBtn.disabled = true;
+      submitBtn.textContent = '⏳ Saving…';
+
+      if (jsonbinReady()) {
+        /* JSONbin path — fetch current list, append, save back */
+        fetchReviews()
+          .then(function (existing) {
+            var review = { name: name, child: child, comment: comment, rating: rating, gradIndex: existing.length };
+            var updated = existing.concat([review]);
+            return putReviews(updated).then(function () { return review; });
+          })
+          .then(function (review) {
+            onSaveSuccess(review, grid, formWrap, successEl, submitBtn);
+          })
+          .catch(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '⭐ Submit My Review';
+            showError('Could not save — please check your connection and try again.');
+          });
+      } else {
+        /* localStorage fallback */
+        var local = [];
+        try { local = JSON.parse(localStorage.getItem(LS_KEY) || '[]'); } catch (e) {}
+        var review = { name: name, child: child, comment: comment, rating: rating, gradIndex: local.length };
+        local.push(review);
+        try { localStorage.setItem(LS_KEY, JSON.stringify(local)); } catch (e) {}
+        onSaveSuccess(review, grid, formWrap, successEl, submitBtn);
+      }
+    });
+
+    /* Write another */
+    if (anotherBtn) {
+      anotherBtn.addEventListener('click', function () {
+        successEl.hidden = true;
+        formWrap.hidden  = false;
+        if (nameInput)  nameInput.value  = '';
+        if (childInput) childInput.value = '';
+        if (textInput)  textInput.value  = '';
+        if (charCount)  charCount.textContent = '0 / 500';
+        if (hintEl)     hintEl.textContent    = 'Tap to rate';
+        document.querySelectorAll('input[name="review_rating"]').forEach(function (r) { r.checked = false; });
+        formWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+
+    function onSaveSuccess(review, grid, formWrap, successEl, submitBtn) {
+      var card = buildReviewCard(review);
+      grid.appendChild(card);
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(card, { opacity: 0, y: 50, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.75, ease: 'back.out(1.4)' });
+      }
+      submitBtn.disabled    = false;
+      submitBtn.textContent = '⭐ Submit My Review';
+      formWrap.hidden  = true;
+      successEl.hidden = false;
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function showError(msg) {
+      if (!errorEl) return;
+      errorEl.textContent = msg;
+      errorEl.hidden = false;
+      errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  /* ============================================================
+     10. GALLERY LIGHTBOX (homepage featured section)
+  ============================================================ */
+  function initGalleryLightbox() {
+    var items = document.querySelectorAll('.gallery-item');
+    if (!items.length) return;
+
+    var lb         = document.getElementById('galleryLightbox');
+    var lbClose    = document.getElementById('lightboxClose');
+    var lbBackdrop = document.getElementById('lightboxBackdrop');
+    var lbDisplay  = document.getElementById('lightboxDisplay');
+    var lbCap      = document.getElementById('lightboxCap');
+    var lbPrev     = document.getElementById('lightboxPrev');
+    var lbNext     = document.getElementById('lightboxNext');
+    var current    = 0;
+
+    var colorClasses = ['gp-blue', 'gp-peach', 'gp-lavender', 'gp-mint', 'gp-pink', 'gp-gold'];
+
+    var data = Array.from(items).map(function (item) {
+      var ph  = item.querySelector('.gallery-placeholder');
+      var cap = item.querySelector('.gallery-caption');
+      var colorClass = 'gp-blue';
+      if (ph) {
+        colorClasses.forEach(function (c) { if (ph.classList.contains(c)) colorClass = c; });
+      }
+      return {
+        colorClass: colorClass,
+        emoji:      ph && ph.querySelector('.gp-emoji') ? ph.querySelector('.gp-emoji').textContent : '🎨',
+        caption:    cap ? cap.textContent : ''
+      };
+    });
+
+    function render() {
+      var d = data[current];
+      lbDisplay.innerHTML = '<div class="gallery-placeholder ' + d.colorClass + '"><span class="gp-emoji">' + d.emoji + '</span></div>';
+      lbCap.textContent = d.caption;
+    }
+
+    function openLightbox(index) {
+      current = ((index % data.length) + data.length) % data.length;
+      render();
+      lb.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      lb.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      if (items[current]) items[current].focus();
+    }
+
+    items.forEach(function (item, i) {
+      item.addEventListener('click', function () { openLightbox(i); });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbBackdrop.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', function () { openLightbox(current - 1); });
+    lbNext.addEventListener('click', function () { openLightbox(current + 1); });
+
+    document.addEventListener('keydown', function (e) {
+      if (lb.hasAttribute('hidden')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft')   openLightbox(current - 1);
+      if (e.key === 'ArrowRight')  openLightbox(current + 1);
+    });
   }
 
 })();

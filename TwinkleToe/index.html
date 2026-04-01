@@ -36,6 +36,7 @@
         <a href="#safety">Safety</a>
         <a href="#daily">Daily Life</a>
         <a href="#facilities">Facilities</a>
+        <a href="gallery.html">Gallery</a>
         <a href="#testimonials">Families</a>
         <a href="#pricing">Fees</a>
       </div>
@@ -50,6 +51,7 @@
       <a href="#safety" class="nav-mobile-link">Safety & Trust</a>
       <a href="#daily" class="nav-mobile-link">Daily Schedule</a>
       <a href="#facilities" class="nav-mobile-link">Our Facilities</a>
+      <a href="gallery.html" class="nav-mobile-link">Gallery</a>
       <a href="#testimonials" class="nav-mobile-link">Parent Stories</a>
       <a href="#pricing" class="nav-mobile-link">Fees & Pricing</a>
       <a href="https://wa.me/27827000703" class="btn-nav-mobile" target="_blank" rel="noopener noreferrer">💬 WhatsApp Trudy</a>
@@ -435,6 +437,87 @@
     </div>
   </section>
 
+  <!-- ===== FEATURED PHOTOS ===== -->
+  <section id="gallery" class="section bg-light-pink">
+    <div class="s-orbs" aria-hidden="true">
+      <div class="s-orb s-orb-1" data-speed="0.12"></div>
+      <div class="s-orb s-orb-2" data-speed="0.16"></div>
+      <div class="s-orb s-orb-3" data-speed="0.09"></div>
+    </div>
+    <div class="container">
+      <p class="section-eyebrow">📸 Featured Photos</p>
+      <h2 class="section-title">Moments of <span class="gradient-text">Joy &amp; Wonder</span></h2>
+      <p class="section-desc">A glimpse into the magic of every day at Twinkle Toe — play, learning, rest, and plenty of love.</p>
+
+      <div class="gallery-featured-grid">
+        <!-- Featured large tile -->
+        <button class="gallery-item gallery-item-feature" data-index="0" aria-label="View: Sensory Play">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-blue"><span class="gp-emoji">🎨</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Sensory Play</p>
+            </div>
+          </div>
+        </button>
+        <!-- 4 smaller tiles -->
+        <button class="gallery-item" data-index="1" aria-label="View: Meal Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-peach"><span class="gp-emoji">🍽️</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Meal Time</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-index="2" aria-label="View: Story Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-pink"><span class="gp-emoji">📖</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Story Time</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-index="3" aria-label="View: Outdoor Play">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-mint"><span class="gp-emoji">🌿</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Outdoor Play</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-index="4" aria-label="View: Nap Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-lavender"><span class="gp-emoji">🛏️</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Nap Time</p>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <div class="gallery-featured-cta">
+        <a href="gallery.html" class="btn-secondary">View Full Gallery <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Lightbox -->
+  <div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Gallery viewer" hidden>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">✕</button>
+    <div class="lightbox-content">
+      <div class="lightbox-display" id="lightboxDisplay"></div>
+      <p class="lightbox-cap" id="lightboxCap"></p>
+      <p class="lightbox-sub">📷 Book a visit to see our space in person!</p>
+    </div>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
+  </div>
+
   <!-- ===== TESTIMONIALS ===== -->
   <section id="testimonials" class="section bg-cream">
     <div class="s-orbs" aria-hidden="true">
@@ -448,6 +531,7 @@
       <div class="testimonials-grid">
 
         <div class="testimonial-card glass-card">
+          <span class="testi-new-badge">✦ Parent Review</span>
           <div class="testi-stars">⭐⭐⭐⭐⭐</div>
           <blockquote>"I cried dropping Liam off on his first day. By 9am I'd called Trudy, convinced I'd made a mistake. She sent me a photo of him smiling during tummy time. I cried again — this time with pure relief. We'll never go anywhere else."</blockquote>
           <div class="testi-author">
@@ -460,6 +544,7 @@
         </div>
 
         <div class="testimonial-card glass-card">
+          <span class="testi-new-badge">✦ Parent Review</span>
           <div class="testi-stars">⭐⭐⭐⭐⭐</div>
           <blockquote>"The 1-to-4 ratio is real — I've visited places that say it but don't deliver. Here you can see it. Trudy knows Zara's mood before Zara does. Our daughter is hitting milestones early and I'm convinced it's because of the quality of care at Twinkle Toe."</blockquote>
           <div class="testi-author">
@@ -472,6 +557,7 @@
         </div>
 
         <div class="testimonial-card glass-card">
+          <span class="testi-new-badge">✦ Parent Review</span>
           <div class="testi-stars">⭐⭐⭐⭐⭐</div>
           <blockquote>"I visited six daycares before choosing Twinkle Toe. The moment I walked in, it smelled clean, I heard happy babies, and Trudy answered every single one of my questions without rushing me once. I enrolled that same week."</blockquote>
           <div class="testi-author">
@@ -484,6 +570,7 @@
         </div>
 
         <div class="testimonial-card glass-card">
+          <span class="testi-new-badge">✦ Parent Review</span>
           <div class="testi-stars">⭐⭐⭐⭐⭐</div>
           <blockquote>"18 months in and Amara still runs in every morning without looking back. That tells me everything I need to know about how safe and loved she feels there. The peace of mind I have is worth absolutely everything to me."</blockquote>
           <div class="testi-author">
@@ -496,6 +583,72 @@
         </div>
 
       </div>
+
+      <!-- ── LEAVE A REVIEW ── -->
+      <div class="review-divider" aria-hidden="true">
+        <span class="review-divider-text">⭐ Share Your Story</span>
+      </div>
+
+      <div class="review-form-wrap glass-card" id="reviewFormWrap">
+        <div class="review-form-header">
+          <h3 class="review-form-title">Leave a Review</h3>
+          <p class="review-form-sub">Your experience helps other parents find the right care for their little one.</p>
+        </div>
+
+        <!-- Star rating (pure CSS hover + JS value read) -->
+        <div class="review-rating-group">
+          <p class="review-rating-label">Your Rating *</p>
+          <div class="star-rating" role="radiogroup" aria-label="Rate your experience from 1 to 5 stars">
+            <input type="radio" name="review_rating" id="rs5" value="5">
+            <label for="rs5" aria-label="5 stars">★</label>
+            <input type="radio" name="review_rating" id="rs4" value="4">
+            <label for="rs4" aria-label="4 stars">★</label>
+            <input type="radio" name="review_rating" id="rs3" value="3">
+            <label for="rs3" aria-label="3 stars">★</label>
+            <input type="radio" name="review_rating" id="rs2" value="2">
+            <label for="rs2" aria-label="2 stars">★</label>
+            <input type="radio" name="review_rating" id="rs1" value="1">
+            <label for="rs1" aria-label="1 star">★</label>
+          </div>
+          <p class="star-rating-hint" id="starRatingHint" aria-live="polite">Tap to rate</p>
+        </div>
+
+        <!-- Fields -->
+        <div class="review-fields">
+          <div class="review-row">
+            <div class="review-field">
+              <label class="review-label" for="reviewName">Your Name *</label>
+              <input class="review-input" type="text" id="reviewName" placeholder="e.g. Sarah M." maxlength="60" autocomplete="name">
+            </div>
+            <div class="review-field">
+              <label class="review-label" for="reviewChild">Baby's Name &amp; Age <span class="review-optional">(optional)</span></label>
+              <input class="review-input" type="text" id="reviewChild" placeholder="e.g. Liam, 7 months" maxlength="60">
+            </div>
+          </div>
+          <div class="review-field">
+            <label class="review-label" for="reviewText">Your Review *</label>
+            <textarea class="review-textarea" id="reviewText" rows="4" placeholder="Tell other parents about your experience at Twinkle Toe..." maxlength="500"></textarea>
+            <span class="review-char-count" id="reviewCharCount">0 / 500</span>
+          </div>
+        </div>
+
+        <div class="review-error" id="reviewError" role="alert" hidden></div>
+
+        <button class="btn-primary review-submit-btn" id="reviewSubmit" type="button">
+          ⭐ Submit My Review
+        </button>
+      </div>
+
+      <!-- Success state -->
+      <div class="review-success glass-card" id="reviewSuccess" hidden>
+        <div class="review-success-emoji">🎉</div>
+        <h3>Thank You for Sharing!</h3>
+        <p>Your review has been added below. Other parents will love reading your story.</p>
+        <button class="btn-secondary" id="reviewAnother" type="button">
+          Write Another Review <span class="btn-arrow">→</span>
+        </button>
+      </div>
+
     </div>
   </section>
 
@@ -618,6 +771,7 @@
           <a href="#daily">Daily Schedule</a>
           <a href="#development">Child Development</a>
           <a href="#facilities">Our Facilities</a>
+          <a href="gallery.html">Our Gallery</a>
           <a href="#testimonials">Parent Stories</a>
           <a href="#pricing">Fees &amp; Pricing</a>
         </div>

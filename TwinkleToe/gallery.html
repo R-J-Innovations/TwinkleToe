@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gallery — Twinkle Toe Day Care. Browse daily moments of play, learning, meals, outdoor time, and cuddles at our premium baby daycare in Faerie Glen, Pretoria East.">
+  <meta property="og:title" content="Gallery | Twinkle Toe Day Care">
+  <meta property="og:description" content="A visual peek into daily life at Twinkle Toe — sensory play, meal times, outdoor adventures, story time, and more.">
+  <meta property="og:type" content="website">
+  <title>Gallery | Twinkle Toe Day Care — Faerie Glen, Pretoria East</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍼</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-emoji">🍼</span>
+        <div class="logo-text-wrap">
+          <span class="logo-name">Twinkle Toe</span>
+          <span class="logo-tag">Day Care</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#safety">Safety</a>
+        <a href="index.html#daily">Daily Life</a>
+        <a href="index.html#facilities">Facilities</a>
+        <a href="gallery.html" class="nav-active">Gallery</a>
+        <a href="index.html#testimonials">Families</a>
+        <a href="index.html#pricing">Fees</a>
+      </div>
+      <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27d%20love%20to%20book%20a%20visit%20to%20Twinkle%20Toe%20Day%20Care." class="btn-nav" target="_blank" rel="noopener noreferrer">
+        📅 Book a Visit
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html#safety" class="nav-mobile-link">Safety &amp; Trust</a>
+      <a href="index.html#daily" class="nav-mobile-link">Daily Schedule</a>
+      <a href="index.html#facilities" class="nav-mobile-link">Our Facilities</a>
+      <a href="gallery.html" class="nav-mobile-link">Gallery</a>
+      <a href="index.html#testimonials" class="nav-mobile-link">Parent Stories</a>
+      <a href="index.html#pricing" class="nav-mobile-link">Fees &amp; Pricing</a>
+      <a href="https://wa.me/27827000703" class="btn-nav-mobile" target="_blank" rel="noopener noreferrer">💬 WhatsApp Trudy</a>
+    </div>
+  </nav>
+
+  <!-- ===== GALLERY PAGE HERO ===== -->
+  <section class="gallery-page-hero">
+    <div class="gph-floats" aria-hidden="true">
+      <span class="gph-float gph-f1">📸</span>
+      <span class="gph-float gph-f2">🌈</span>
+      <span class="gph-float gph-f3">🧸</span>
+      <span class="gph-float gph-f4">⭐</span>
+      <span class="gph-float gph-f5">💕</span>
+      <span class="gph-float gph-f6">🎨</span>
+    </div>
+    <div class="container">
+      <p class="section-eyebrow">📸 Our Gallery</p>
+      <h1>Precious <span class="gradient-text">Moments</span> Every Day</h1>
+      <p>Browse through snapshots of daily life at Twinkle Toe — the play, the learning, the laughter, and all the love in between.</p>
+      <p class="gallery-photos-note">These are placeholder images — real photos are available on request. <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20Could%20I%20please%20see%20some%20photos%20of%20Twinkle%20Toe%3F" target="_blank" rel="noopener noreferrer" style="color:var(--pink);font-weight:700;">Ask Trudy on WhatsApp →</a></p>
+    </div>
+  </section>
+
+  <!-- ===== FULL GALLERY ===== -->
+  <section class="section bg-cream">
+    <div class="container">
+
+      <!-- Filter tabs -->
+      <div class="gallery-filters" role="tablist" aria-label="Filter photos by category">
+        <button class="gallery-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Photos</button>
+        <button class="gallery-filter-btn" data-filter="play" role="tab" aria-selected="false">🎨 Play</button>
+        <button class="gallery-filter-btn" data-filter="meals" role="tab" aria-selected="false">🍽️ Meals &amp; Rest</button>
+        <button class="gallery-filter-btn" data-filter="outdoors" role="tab" aria-selected="false">🌿 Outdoors</button>
+        <button class="gallery-filter-btn" data-filter="learning" role="tab" aria-selected="false">📖 Learning</button>
+      </div>
+
+      <!-- Full grid — 16 photos across 4 categories -->
+      <div class="gallery-full-grid">
+
+        <!-- PLAY (4) -->
+        <button class="gallery-item" data-category="play" aria-label="View: Sensory Exploration">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-blue"><span class="gp-emoji">🎨</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Sensory Exploration</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="play" aria-label="View: Finger Painting">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-pink"><span class="gp-emoji">🖌️</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Finger Painting</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="play" aria-label="View: Building Blocks">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-gold"><span class="gp-emoji">🧱</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Building Blocks</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="play" aria-label="View: Music and Dance">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-lavender"><span class="gp-emoji">🎵</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Music &amp; Dance</p>
+            </div>
+          </div>
+        </button>
+
+        <!-- MEALS & REST (4) -->
+        <button class="gallery-item" data-category="meals" aria-label="View: Meal Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-peach"><span class="gp-emoji">🍽️</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Meal Time</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="meals" aria-label="View: Snack Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-mint"><span class="gp-emoji">🥣</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Snack Time</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="meals" aria-label="View: Nap Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-lavender"><span class="gp-emoji">🛏️</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Nap Time</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="meals" aria-label="View: Cuddle Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-peach"><span class="gp-emoji">💕</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Cuddle Time</p>
+            </div>
+          </div>
+        </button>
+
+        <!-- OUTDOORS (4) -->
+        <button class="gallery-item" data-category="outdoors" aria-label="View: Garden Play">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-mint"><span class="gp-emoji">🌿</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Garden Play</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="outdoors" aria-label="View: Sunshine Walk">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-gold"><span class="gp-emoji">☀️</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Sunshine Walk</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="outdoors" aria-label="View: Water Play">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-blue"><span class="gp-emoji">💧</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Water Play</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="outdoors" aria-label="View: Nature Explorer">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-mint"><span class="gp-emoji">🌸</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Nature Explorer</p>
+            </div>
+          </div>
+        </button>
+
+        <!-- LEARNING (4) -->
+        <button class="gallery-item" data-category="learning" aria-label="View: Story Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-pink"><span class="gp-emoji">📖</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Story Time</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="learning" aria-label="View: Learning Corner">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-blue"><span class="gp-emoji">🧩</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Learning Corner</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="learning" aria-label="View: Tummy Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-gold"><span class="gp-emoji">🧸</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Tummy Time</p>
+            </div>
+          </div>
+        </button>
+        <button class="gallery-item" data-category="learning" aria-label="View: Circle Time">
+          <div class="gallery-thumb">
+            <div class="gallery-placeholder gp-lavender"><span class="gp-emoji">🌙</span></div>
+            <div class="gallery-overlay">
+              <span class="gallery-zoom" aria-hidden="true">🔍</span>
+              <p class="gallery-caption">Circle Time</p>
+            </div>
+          </div>
+        </button>
+
+      </div>
+
+      <p class="gallery-note" style="margin-top:2.5rem;">📷 Real photos are available on request — <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20Could%20I%20please%20see%20some%20photos%20of%20Twinkle%20Toe%3F" target="_blank" rel="noopener noreferrer">ask Trudy on WhatsApp</a> or <a href="index.html#cta">book a visit</a> to see our space in person.</p>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY LIGHTBOX ===== -->
+  <div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Gallery viewer" hidden>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">✕</button>
+    <div class="lightbox-content">
+      <div class="lightbox-display" id="lightboxDisplay"></div>
+      <p class="lightbox-cap" id="lightboxCap"></p>
+      <p class="lightbox-sub">📷 Book a visit to see our space in person!</p>
+    </div>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <span class="footer-logo-emoji">🍼</span>
+            <div>
+              <div class="footer-logo-name">Twinkle Toe Day Care</div>
+              <div class="footer-logo-tag">Where babies feel safe, loved &amp; happy.</div>
+            </div>
+          </div>
+          <p class="footer-brand-desc">Premium baby daycare in Faerie Glen, Pretoria East. Caring for babies aged 4 weeks to 2 years with warmth, expertise, and genuine love.</p>
+          <div class="footer-contacts">
+            <a href="tel:0827000703" class="footer-contact-link">📞 082 700 0703</a>
+            <a href="mailto:trudy@twinkletoe.co.za" class="footer-contact-link">✉️ trudy@twinkletoe.co.za</a>
+            <p class="footer-contact-link">📍 238 Cliffendale Drive,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faerie Glen, Pretoria East</p>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <a href="index.html#safety">Safety &amp; Trust</a>
+          <a href="index.html#daily">Daily Schedule</a>
+          <a href="index.html#development">Child Development</a>
+          <a href="index.html#facilities">Our Facilities</a>
+          <a href="gallery.html">Our Gallery</a>
+          <a href="index.html#testimonials">Parent Stories</a>
+          <a href="index.html#pricing">Fees &amp; Pricing</a>
+        </div>
+        <div class="footer-hours-col">
+          <h4>Operating Hours</h4>
+          <div class="hours-table">
+            <span class="hours-day">Monday</span>
+            <span class="hours-time">6:30am – 6:00pm</span>
+            <span class="hours-day">Tue – Fri</span>
+            <span class="hours-time">6:30am – 6:30pm</span>
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">Closed</span>
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time">Closed</span>
+          </div>
+        </div>
+        <div class="footer-cta-col">
+          <h4>Start Today</h4>
+          <p>Limited spaces available. Secure your baby's spot before the waitlist opens.</p>
+          <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27d%20love%20to%20book%20a%20tour%20of%20Twinkle%20Toe." class="btn-footer-wa" target="_blank" rel="noopener noreferrer">
+            💬 WhatsApp Trudy
+          </a>
+          <a href="tel:0827000703" class="btn-footer-call">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Twinkle Toe Day Care &nbsp;·&nbsp; Faerie Glen, Pretoria &nbsp;·&nbsp; All Rights Reserved</p>
+        <p class="footer-love">Made with ❤️ for the little ones</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+  <a href="https://wa.me/27827000703?text=Hi%20Trudy!%20I%27d%20love%20to%20know%20more%20about%20Twinkle%20Toe%20Day%20Care." class="wa-float" id="waFloat" target="_blank" rel="noopener noreferrer" aria-label="Chat with Trudy on WhatsApp">
+    <div class="wa-float-inner">
+      <svg class="wa-icon" width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.115 1.524 5.844L0 24l6.334-1.503A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.508-5.166-1.395l-.371-.219-3.861.915.981-3.773-.241-.388A9.961 9.961 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      <span class="wa-label-text">Book a Tour</span>
+    </div>
+    <div class="wa-pulse" aria-hidden="true"></div>
+  </a>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>
